@@ -1,0 +1,32 @@
+{% extends "mainApp/wrapper.html"%}
+
+{% block content %}
+
+{% load static %}
+
+<h1>Contact with me:</h1>
+
+
+<style>
+    h1
+        {
+            color: deeppink;
+            font-size: 53px;
+        }
+    p
+        {
+            color: #062c33;
+            font-size: 20px;
+        }
+</style>
+
+    {% for contact in contacts %}
+
+        <p>{{contact}}</p>
+
+    {% endfor %}
+
+     <img src="{% static 'mainApp/image/gmail.png' %}" width="400" height="250"
+             class="img-thumbnail">
+
+{% endblock %}

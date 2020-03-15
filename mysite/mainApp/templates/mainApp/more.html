@@ -1,0 +1,47 @@
+{% extends "mainApp/wrapper.html"%}
+
+{% block content %}
+
+{% load static %}
+
+    <h1>More Information</h1>
+
+<style>
+    h1
+        {
+            color: blueviolet;
+            font-size: 53px;
+        }
+    p
+        {
+        color: #062c33;
+        font-size: 20px;
+        }
+</style>
+
+        <img src="{% static 'mainApp/image/discord.jpg' %}" width="450" height="450"
+             class="img-thumbnail">
+        <img src="{% static 'mainApp/image/me.jpg' %}" width="250" height="250"
+             class="img-thumbnail">
+
+    <p>
+        My main professional activity is the development of various python solutions.
+    They, in turn, present various modular projects for information infrastructures,
+  in particular devops. My second activity is data analysis and machine learning,
+  namely the use of data analysis for a computer vision system in various fields.
+  This activity already implies more research work, since today we have many solutions,
+  and the main task I set for myself is that these solutions can be adapted to a specific area.
+    </p>
+
+    <p>
+        Quite often, I work with other engineers on different projects.
+        Some we do for ourselves, and sometimes we contibutes solutions to open source
+    </p>
+
+         <img src="{% static 'mainApp/image/team.png' %}" width="500" height="400"
+             class="img-thumbnail">
+         <img src="{% static 'mainApp/image/team2.png' %}" width="500" height="500"
+             class="img-thumbnail">
+
+
+        {% endblock %}

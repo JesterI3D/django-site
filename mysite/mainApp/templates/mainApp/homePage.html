@@ -1,0 +1,30 @@
+{% extends "mainApp/wrapper.html"%}
+
+
+{% block content %}
+
+{% load static %}
+
+    <h1>Hello Everyone!</h1>
+
+<style>
+    h1
+    {
+        color: green;
+        font-size: 53px;
+    }
+    p
+    {
+        color: #062c33;
+        font-size: 20px;
+    }
+</style>
+
+    <p>My name is Nikita and I am a Python software engineer,
+        you got to my personal page, which in most cases is like a resume site,
+        it shows you my contact information, my projects and what area I'm developing</p>
+
+         <img src="{% static 'mainApp/image/py.png' %}" width="400" height="250"
+             class="img-thumbnail">
+
+{% endblock %}
