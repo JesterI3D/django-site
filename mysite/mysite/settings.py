@@ -77,12 +77,17 @@ STATICFILES_DIRS = [
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': os.path.join(BASE_DIR, 'DjangoDB'),
+#        'USER': 'polls-instance',
+#        'PASSWORD': 'root',
+#        'HOST': '35.187.120.35',
+#        'PORT': '3306'
+
+#    }
+#}
 
 
 # Password validation
