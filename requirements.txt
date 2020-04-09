@@ -1,3 +1,6 @@
+pytest
+requests
 django==3.0.4
 entrypoints==0.3
 Jinja2==2.11.1
+PyMySql

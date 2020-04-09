@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = # 'YOUR SECRET KEY'
+SECRET_KEY = 'key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -77,17 +77,32 @@ STATICFILES_DIRS = [
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': os.path.join(BASE_DIR, 'DjangoDB'),
-#        'USER': 'polls-instance',
-#        'PASSWORD': 'root',
-#        'HOST': '35.187.120.35',
-#        'PORT': '3306'
+import pymysql
+pymysql.version_info = (1, 3, 13, "final", 0)
+pymysql.install_as_MySQLdb()
 
-#    }
-#}
+if os.getenv('GAE_APPLICATION', None):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/savvy-etching-254922:europe-west1:polls-instance',
+            'USER': 'polls-instance',
+            'PASSWORD': 'root',
+            'NAME': 'DjangoDB',
+        }
+    }
+else:
+    DATABASES = {
+
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'USER': 'root',
+            'NAME': 'db',
+            'PASSWORD': 'root',
+            'HOST': '127.0.0.1',  # Or an IP Address that your DB is hosted on
+            'PORT': '3306',
+        }
+    }
 
 
 # Password validation

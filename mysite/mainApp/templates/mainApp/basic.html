@@ -18,15 +18,19 @@
             color: #062c33;
             font-size: 20px;
         }
+    .bottom
+        {
+            color: #b3d7ff;
+        }
 </style>
 
     {% for contact in contacts %}
 
-        <p>{{contact}}</p>
+    <p>{{contact}}</p>
 
     {% endfor %}
 
-     <img src="{% static 'mainApp/image/gmail.png' %}" width="400" height="250"
-             class="img-thumbnail">
+     <img src="{% static 'mainApp/image/vk-logo.png' %}" width="260" height="230"/>
+    <img src="{% static 'mainApp/image/Octocat.png' %}" width="260" height="230"/>
 
 {% endblock %}
