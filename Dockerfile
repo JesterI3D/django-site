@@ -1,6 +1,6 @@
 FROM django
 
-ADD . /django-site/mysite
+ADD mysite /django-site/mysite
 
 WORKDIR /django-site
 

@@ -1,6 +1,6 @@
 pytest
 requests
-django==3.0.4
+django==3.0.5
 entrypoints==0.3
 Jinja2==2.11.1
 PyMySql
