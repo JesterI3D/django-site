@@ -1,4 +1,4 @@
 django==3.0.8
 entrypoints==0.3
 Jinja2==2.11.2
-djangorestframework
+djangorestframework==3.11.0
