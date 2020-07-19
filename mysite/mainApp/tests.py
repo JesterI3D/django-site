@@ -22,7 +22,7 @@ def test_an_admin_view():
     url = 'http://127.0.0.1:8000'
     response = requests.post(url, data={'key': 'value'}, timeout=1)
     if response.status_code == 200:
-        return 1
+        print('Success!')
     elif response.status_code == 404 or 500:
-        return ConnectionError
+        print('Connection Error!')
     print(response.elapsed.total_seconds())
