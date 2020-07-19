@@ -17,7 +17,7 @@ def main():
     execute_from_command_line(sys.argv)
 
     # Attach the Python Cloud debugger (only the main server process).
-    if os.environ.get('RUN_MAIN') or '--noreload' in sys.argv:
+    if get('RUN_MAIN') or '--noreload' in sys.argv:
         try:
             import googleclouddebugger
             googleclouddebugger.enable(module='[mainpage]', version='[1.0]')

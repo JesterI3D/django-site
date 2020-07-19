@@ -1,4 +1,14 @@
 from django.shortcuts import render
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from .models import mainApp
+
+
+class MainView(APIView):
+    def get(request):
+        main_App = mainApp.objects.all()
+        return Response({"mainApp": main_App})
 
 
 def index(request):
@@ -15,3 +25,7 @@ def contact(request):
 
 def more(request):
     return render(request, 'mainApp/more.html')
+
+
+#def admin(request):
+#    return render(request, '/admin/')

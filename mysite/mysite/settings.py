@@ -32,12 +32,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'mainApp',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
@@ -77,17 +78,16 @@ STATICFILES_DIRS = [
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': os.path.join(BASE_DIR, 'DjangoDB'),
-#        'USER': 'polls-instance',
-#        'PASSWORD': 'root',
-#        'HOST': '35.187.120.35',
-#        'PORT': '3306'
-
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sqlite.db',
+        'USER': 'JesterI3D',
+        'PASSWORD': 'root',
+        'HOST': '172.0.0.2',
+        'PORT': '3306'
+    }
+}
 
 
 # Password validation
@@ -125,5 +125,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 STATIC_URL = '/static/'
