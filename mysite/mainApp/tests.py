@@ -1,12 +1,11 @@
 import pytest
 import requests
-
-import mysite.mysite.settings
+from django.conf import settings
 
 
 @pytest.fixture(scope='session')
 def django_db_setup():
-    mysite.mysite.settings.DATABASES['default'] = \
+    settings.DATABASES['default'] = \
         {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': 'sqlite.db',
