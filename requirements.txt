@@ -1,3 +1,4 @@
+djangorestframework
 pytest
 requests
 django==3.0.8
