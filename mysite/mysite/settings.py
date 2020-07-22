@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'sqlite.db',
         'USER': 'JesterI3D',
         'PASSWORD': 'root',
-        'HOST': '172.0.0.2',
+        'HOST': '127.0.0.1',
         'PORT': '3306'
     }
 }
