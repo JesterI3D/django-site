@@ -9,11 +9,11 @@ class TestDB(TestCase):
     def setting_db(self):
         settings.DATABASES['default'] = \
             {
-                'ENGINE': 'django.db.backends.postgresql',
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'postgres',
-                'USER': 'db',
+                'USER': 'admin',
                 'PASSWORD': 'root',
-                'HOST': 'db',
+                'HOST': 'localhost',
                 'PORT': '5432'
             }
 
