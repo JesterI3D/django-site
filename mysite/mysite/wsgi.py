@@ -8,9 +8,18 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
+from django.conf import settings
+from django.contrib.staticfiles.handlers import StaticFilesHandler
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+path = '/Users/admin/PycharmProjects/django-site'
+if path not in sys.path:
+    sys.path.append(path)
 
-application = get_wsgi_application()
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+if settings.DEBUG:
+    application = StaticFilesHandler(get_wsgi_application())
+else:
+    application = get_wsgi_application()

@@ -9,17 +9,17 @@ class TestDB(TestCase):
     def setting_db(self):
         settings.DATABASES['default'] = \
             {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': 'sqlite.db',
-                'USER': 'JesterI3D',
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'postgres',
+                'USER': 'db',
                 'PASSWORD': 'root',
-                'HOST': '172.0.0.2',
-                'PORT': '3306'
+                'HOST': 'db',
+                'PORT': '5432'
             }
 
     def django_db_setup(self):
-        settings_ = settings.objects.get(['django.db.backends.sqlite3'])
-        self.assertEqual(settings_.DATABASES(['default']), "default_DB_sqlite")\
+        settings_ = settings.objects.get(['django.db.backends.postgresql'])
+        self.assertEqual(settings_.DATABASES(['default']), "postgres")\
 
 
     @pytest.mark.request(transaction=True)

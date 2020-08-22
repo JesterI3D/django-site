@@ -25,7 +25,7 @@ SECRET_KEY = 'secret-key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
 
 
 # Application definition
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'mysite.wsgi:application'
 
 STATICFILES_DIRS = [
     os.path.join("Project", "static"),
@@ -80,12 +80,12 @@ STATICFILES_DIRS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'sqlite.db',
-        'USER': 'JesterI3D',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'admin',
         'PASSWORD': 'root',
-        'HOST': '172.0.0.2',
-        'PORT': '3306'
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 

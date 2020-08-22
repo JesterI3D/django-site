@@ -1,20 +1,24 @@
 FROM django
 
+EXPOSE 8000
+
+COPY . /mysite/
+
 ADD mysite /django-site/mysite
 
 WORKDIR /django-site
 
-EXPOSE 8000
+RUN pip install --upgrade pip
+RUN pip3 install -r mysite/requirements.txt
+RUN pip3 install psycopg2 && pip3 install psycopg2-binary
+RUN pip3 install django --upgrade && pip3 install djangorestframework --upgrade
 
-RUN pip install -U pip
+ARG PYTHON_VERSION=3.7
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-RUN pip3 install --upgrade django
-RUN pip3 install -r requirements.txt
+ADD docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod a+x /docker-entrypoint.sh
+ENTRYPOINT /docker-entrypoint.sh
 
-ARG PYTHON_VERSION=3.8
-ENV PYTHON_VERSION=$PYTHON_VERSION
-ENV PYTHON=python${PYTHON_VERSION}
-
-ENTRYPOINT ["python3.8", ". /manage.py"]
-
-CMD ["runserver", " 0.0.0.0:8000"]
+#CMD ["gunicorn", "--bind", "0.0.0.0:8000", "mysite.wsgi:application"]
