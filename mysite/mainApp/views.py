@@ -27,5 +27,9 @@ def more(request):
     return render(request, 'mainApp/more.html')
 
 
+def skills(request):
+    return render(request, 'mainApp/skills.html')
+
+
 #def admin(request):
 #    return render(request, '/admin/')

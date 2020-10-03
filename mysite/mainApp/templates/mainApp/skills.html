@@ -1,0 +1,63 @@
+{% extends "mainApp/wrapper.html"%}
+
+{% block content %}
+
+{% load static %}
+
+<h1 xmlns="http://www.w3.org/1999/html">Hard skills</h1>
+
+ <img src="{% static 'mainApp/image/gitstats1.png' %}" width="450" height="450"
+             class="img-thumbnail"/>
+ <img src="{% static 'mainApp/image/gitstats2.png' %}" width="607" height="450"
+             class="img-thumbnail"/>
+
+<ul class="skills">
+    <li class="li-col">Development</li>
+        <ul class="inside">
+            <li>Python 3 (stdlib, backend libs)</a></li>
+            <li>Django, Flask</li>
+            <li>JS, CSS, HTML</a></li>
+        </ul>
+    <li class="li-col">DevOps</li>
+        <ul class="inside">
+            <li>Сontainerization (Docker, Swarm, Compose, basic K8S)</li>
+            <li>GCP, AWS, Yandex.Cloud & etc IaaS</li>
+            <li>Bash, YML configuration/scripting</li>
+            <li></li>
+        </ul>
+    <li class="li-col">Machine Learning and Data Engineering</li>
+        <ul class="inside">
+            <li>SkLearn, NumPy, Pandas</li>
+            <li>OpenCV, Matplotlib/Seaborn</li>
+            <li>Jupyter/Google Colab</li>
+            <li>MapReduce, TFTDS, SQl/NoSQL</li>
+        </ul>
+ </ul>
+
+<style>
+    .li-col{
+        color: darkslateblue;
+    }
+    ul
+        {
+            list-style-position: inside;
+            font-size: 20px;
+            color: deepskyblue;
+        }
+    h1
+        {
+            color: deepskyblue;
+            font-size: 53px;
+        }
+    p
+        {
+            color: #062c33;
+            font-size: 20px;
+        }
+    .bottom
+        {
+            color: #b3d7ff;
+        }
+</style>
+
+       {% endblock %}
