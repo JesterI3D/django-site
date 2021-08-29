@@ -1,7 +1,7 @@
 djangorestframework>=3.9.4
 pytest
 requests
-django>=2.0.13
+Django>=3.1.12
 entrypoints==0.3
 Jinja2>=2.10.3
 gunicorn
